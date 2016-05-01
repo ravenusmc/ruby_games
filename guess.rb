@@ -1,4 +1,7 @@
-#This is a number guessing game. 
+#This is a number guessing game. The user will select the game difficuly of easy, medium or hard 
+#and then the game will start. The user's goal is to guess the correct number in the fewest number
+#of attempts. It does work and plays fine. I may add other features to it as time goes on but 
+#right now I ma fairly happy with it! 
 
 #This method will be the starting screen of the game. It is from here that the user will decide 
 #whether or not they want to play the game. 
@@ -57,6 +60,8 @@ def mode
   end 
 end 
 
+#This method is where the actual game play takes place. Based on variables that are passed in the 
+#game difficulty will change. 
 def game(mode, count, rangeL, rangeH, number)
   puts `clear`
   puts "---------------------"
