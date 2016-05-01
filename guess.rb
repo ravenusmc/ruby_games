@@ -21,10 +21,45 @@ end
 
 #This method will allow the user to select what game difficulty they want to play on.
 def mode 
+  puts `clear`
   puts "Before you play, you need to select your game difficulty!"
+  puts "What game difficulty do you want?"
+  puts "Please select the following:"
+  puts "1. Easy"
+  puts "2. Medium"
+  puts "3. Hard"
+  num =  gets.chomp.to_i 
+  while !modeValid(num)
+    puts "Please enter either 1, 2 or 3"
+    num = gets.chomp.to_i
+  end 
+  if num == 1 
+    number = rand(1..10)
+    easy_mode(number)
+  end 
 end 
 
-#All the methods below this point are "helper" methods like validation.
+def easy_mode(number)
+  puts `clear`
+  puts "---------------------"
+  puts "Welcome to Easy mode!"
+  puts "---------------------"
+  puts "Please enter a number to guess between 1 and 10"
+  guess = gets.chomp.to_i
+  count = 0
+  if guess > number 
+    puts "You guessed to high"
+    count += 1
+  elsif guess < number 
+    puts "You guessed to low"
+    count += 1 
+  elsif guess == number 
+    puts "you guessed the number!"
+  end
+end 
+
+
+##########All the methods below this point are "helper" methods like validation. ############
 
 #This is a validation method to ensure that the player selects either yes or no. 
 def valid(choice)
@@ -32,6 +67,15 @@ def valid(choice)
     return true 
   else 
     return false
+  end 
+end 
+
+#Another user validation model to ensure that the user selects either 1, 2 or 3. 
+def modeValid(num)
+  if num == 1 || num == 2 || num == 3
+    return true 
+  else 
+    return false 
   end 
 end 
 
