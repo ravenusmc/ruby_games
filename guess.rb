@@ -14,16 +14,25 @@ def main
   end 
   if choice == 'y'
     mode 
+  else 
+    puts "Well, I hope you come back soon to play!"
   end 
 end 
 
+#This method will allow the user to select what game difficulty they want to play on.
 def mode 
-  puts "Hello"
+  puts "Before you play, you need to select your game difficulty!"
 end 
 
 #All the methods below this point are "helper" methods like validation.
 
+#This is a validation method to ensure that the player selects either yes or no. 
 def valid(choice)
-
+  if choice == "y" || choice == "n"
+    return true 
+  else 
+    return false
+  end 
+end 
 
 main 
