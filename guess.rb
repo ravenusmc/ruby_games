@@ -35,11 +35,11 @@ def mode
   end 
   if num == 1 
     number = rand(1..10)
-    easy_mode(number)
+    game(number)
   end 
 end 
 
-def easy_mode(number)
+def game(number)
   puts `clear`
   puts "---------------------"
   puts "Welcome to Easy mode!"
@@ -47,15 +47,20 @@ def easy_mode(number)
   puts "Please enter a number to guess between 1 and 10"
   guess = gets.chomp.to_i
   count = 0
-  if guess > number 
-    puts "You guessed to high"
-    count += 1
-  elsif guess < number 
-    puts "You guessed to low"
-    count += 1 
-  elsif guess == number 
-    puts "you guessed the number!"
-  end
+  while guess != number 
+    if guess > number 
+      puts "You guessed to high"
+      count += 1
+      puts "Please enter a number to guess between 1 and 10"
+      guess = gets.chomp.to_i
+    elsif guess < number 
+      puts "You guessed to low"
+      count += 1 
+      puts "Please enter a number to guess between 1 and 10"
+      guess = gets.chomp.to_i
+    end
+  end 
+  puts "You guessed the number in #{count} attempts!"
 end 
 
 
