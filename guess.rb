@@ -33,30 +33,48 @@ def mode
     puts "Please enter either 1, 2 or 3"
     num = gets.chomp.to_i
   end 
-  if num == 1 
+  if num == 1
+    mode = "Easy"
+    count = 0
+    rangeL = 1
+    rangeH = 10
     number = rand(1..10)
-    game(number)
+    game(mode, count, rangeL, rangeH, number)
+  elsif num == 2
+    mode = "Medium"
+    count = 0
+    rangeL = 1
+    rangeH = 100
+    number = rand(1..100)
+    game(mode, count, rangeL, rangeH, number)
+  elsif num == 3 
+    mode = "Hard"
+    count = 0 
+    rangeL = 1
+    rangeH = 1000
+    number = rand(1..1000)
+    game(mode, count, rangeL, rangeH, number)
   end 
 end 
 
-def game(number)
+def game(mode, count, rangeL, rangeH, number)
   puts `clear`
   puts "---------------------"
-  puts "Welcome to Easy mode!"
+  puts "Welcome to #{mode} mode!"
   puts "---------------------"
-  puts "Please enter a number to guess between 1 and 10"
+  puts "Please enter a number to guess between #{rangeL} and #{rangeH}."
   guess = gets.chomp.to_i
-  count = 0
+  count += 1 
   while guess != number 
     if guess > number 
       puts "You guessed to high"
       count += 1
-      puts "Please enter a number to guess between 1 and 10"
+      puts "Please enter a number to guess between #{rangeL} and #{rangeH}."
       guess = gets.chomp.to_i
     elsif guess < number 
       puts "You guessed to low"
       count += 1 
-      puts "Please enter a number to guess between 1 and 10"
+      puts "Please enter a number to guess between #{rangeL} and #{rangeH}."
       guess = gets.chomp.to_i
     end
   end 
