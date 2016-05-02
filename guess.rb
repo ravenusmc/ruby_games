@@ -31,9 +31,10 @@ def mode
   puts "1. Easy"
   puts "2. Medium"
   puts "3. Hard"
+  puts "4. Your choice"
   num =  gets.chomp.to_i 
   while !modeValid(num)
-    puts "Please enter either 1, 2 or 3"
+    puts "Please enter either 1, 2, 3 or 4"
     num = gets.chomp.to_i
   end 
   if num == 1
@@ -56,6 +57,15 @@ def mode
     rangeL = 1
     rangeH = 1000
     number = rand(1..1000)
+    game(mode, count, rangeL, rangeH, number)
+  elsif num == 4 
+    mode = "N/A"
+    count = 0
+    rangeL = 1
+    puts "Please enter an upper value."
+    upper = gets.chomp.to_i
+    rangeH = upper
+    number = rand(1..rangeH)
     game(mode, count, rangeL, rangeH, number)
   end 
 end 
@@ -100,7 +110,7 @@ end
 
 #Another user validation model to ensure that the user selects either 1, 2 or 3. 
 def modeValid(num)
-  if num == 1 || num == 2 || num == 3
+  if num == 1 || num == 2 || num == 3 || num == 4
     return true 
   else 
     return false 
