@@ -36,10 +36,37 @@ def human
   end 
   if weapon == 1 
     puts "You selected 'ROCK' as your weapon."
+    game(weapon)
   elsif weapon == 2
     puts "You selected 'PAPER' as your weapon."
+    game(weapon)
   elsif weapon == 3
     puts "You selected 'SCISSORS' as your weapon."
+    game(weapon)
+  end 
+end 
+
+#This method is where the robot will select its weapon. It will not actually be called until the 
+#game method. 
+def robot()
+  number = rand(1..3)
+  return number
+end
+
+#This method is where the actual game will be played. 
+def game(weapon)
+  puts `clear`
+  robChoice = robot
+  puts "-----------------------"
+  puts "The robot selected #{robChoice}"
+  puts "-----------------------"
+  puts "The winner is: "
+  if weapon == 1 && robChoice == 2
+    puts "The Robot wins!"
+  elsif weapon == 1 && robChoice == 3
+    puts "The Human wins!"
+  elsif weapon == 1 && robChoice == 1
+    puts "Tie Game! Play again!"
   end 
 end 
 
