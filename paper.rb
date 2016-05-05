@@ -36,13 +36,16 @@ def human
   end 
   if weapon == 1 
     puts "You selected 'ROCK' as your weapon."
-    game(weapon)
+    weaponSHow = "ROCK"
+    game(weapon, weaponSHow)
   elsif weapon == 2
     puts "You selected 'PAPER' as your weapon."
-    game(weapon)
+    weaponSHow = "PAPER"
+    game(weapon, weaponSHow)
   elsif weapon == 3
     puts "You selected 'SCISSORS' as your weapon."
-    game(weapon)
+    weaponSHow = "SCISSORS"
+    game(weapon, weaponSHow)
   end 
 end 
 
@@ -54,11 +57,11 @@ def robot()
 end
 
 #This method is where the actual game will be played. 
-def game(weapon)
+def game(weapon, weaponSHow)
   puts `clear`
+  puts "The human selected #{weaponSHow}"
   robChoice = robot
   show(robChoice)
-  puts "The winner is: "
   if weapon == 1 && robChoice == 1
     puts "Tie Game! Play again!"
   elsif weapon == 1 && robChoice == 2
@@ -81,6 +84,7 @@ def game(weapon)
 end 
 
 ########### All of the validation or 'extra' methods, if I need them will be here. #######
+
 #The below two methods validate to ensure that the user inputs the correct choice. 
 def valid(choice)
   if choice == "y" || choice == "n"
