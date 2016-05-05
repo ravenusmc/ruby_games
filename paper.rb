@@ -57,19 +57,7 @@ end
 def game(weapon)
   puts `clear`
   robChoice = robot
-  if robChoice == 1
-    puts "-----------------------"
-    puts "The robot selected ROCK"
-    puts "-----------------------"
-  elsif robChoice == 2
-    puts "-----------------------"
-    puts "The robot selected PAPER"
-    puts "-----------------------"
-  elsif robChoice == 3
-    puts "-----------------------"
-    puts "The robot selected SCISSORS"
-    puts "-----------------------"
-  end 
+  show(robChoice)
   puts "The winner is: "
   if weapon == 1 && robChoice == 1
     puts "Tie Game! Play again!"
@@ -93,6 +81,7 @@ def game(weapon)
 end 
 
 ########### All of the validation or 'extra' methods, if I need them will be here. #######
+#The below two methods validate to ensure that the user inputs the correct choice. 
 def valid(choice)
   if choice == "y" || choice == "n"
     return true
@@ -106,6 +95,23 @@ def valid2(weapon)
     return true
   else 
     return false
+  end 
+end 
+
+#The below method shows what the robot selected. 
+def show(robChoice)
+    if robChoice == 1
+    puts "-----------------------"
+    puts "The robot selected ROCK"
+    puts "-----------------------"
+  elsif robChoice == 2
+    puts "-----------------------"
+    puts "The robot selected PAPER"
+    puts "-----------------------"
+  elsif robChoice == 3
+    puts "-----------------------"
+    puts "The robot selected SCISSORS"
+    puts "-----------------------"
   end 
 end 
 
