@@ -57,17 +57,39 @@ end
 def game(weapon)
   puts `clear`
   robChoice = robot
-  puts "-----------------------"
-  puts "The robot selected #{robChoice}"
-  puts "-----------------------"
+  if robChoice == 1
+    puts "-----------------------"
+    puts "The robot selected ROCK"
+    puts "-----------------------"
+  elsif robChoice == 2
+    puts "-----------------------"
+    puts "The robot selected PAPER"
+    puts "-----------------------"
+  elsif robChoice == 3
+    puts "-----------------------"
+    puts "The robot selected SCISSORS"
+    puts "-----------------------"
+  end 
   puts "The winner is: "
-  if weapon == 1 && robChoice == 2
+  if weapon == 1 && robChoice == 1
+    puts "Tie Game! Play again!"
+  elsif weapon == 1 && robChoice == 2
     puts "The Robot wins!"
   elsif weapon == 1 && robChoice == 3
     puts "The Human wins!"
-  elsif weapon == 1 && robChoice == 1
-    puts "Tie Game! Play again!"
-  end 
+  elsif weapon == 2 && robChoice == 1 
+    puts "The Human wins"
+  elsif weapon == 2 && robChoice == 2
+    puts "Tie game! Play again!"
+  elsif weapon == 2 && robChoice == 3
+    puts "The robot wins"
+  elsif weapon == 3 && robChoice == 1
+    puts "The Robot wins"
+  elsif weapon == 3 && robChoice == 2
+    puts "The Human wins"
+  elsif weapon == 3 && robChoice == 3 
+    puts "Tie game! Play Again"  
+  end   
 end 
 
 ########### All of the validation or 'extra' methods, if I need them will be here. #######
