@@ -5,4 +5,4 @@ games in this file. If they are complete then I will leave a comment at the top 
 
 ==GAMES INCLUDED
 
-tic-tac-toe, a number guessing game
+tic-tac-toe, a number guessing game, Paper Rock and Scissors
