@@ -5,7 +5,29 @@ def main
   puts "      CAT AND MOUSE     "
   puts "      STRATEGY GAME     "
   puts "------------------------"
-  puts
+  puts "Please select an option:"
+  puts "1. Start Game"
+  puts "2. Directions"
+  choice = gets.chomp.to_i
+  while !valid(choice)
+    puts "Please enter either 1 or 2"
+    choice = gets.chomp.to_i
+  end 
+  if choice == 1 
+    game 
+  elsif choice == 2
+    directions
+  end 
+end 
+
+################# Validation methods #############
+
+def valid(choice)
+  if choice == 1 || choice == 2
+    return true
+  else 
+    return false
+  end 
 end 
 
 main
