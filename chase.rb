@@ -20,6 +20,12 @@ def main
   end 
 end 
 
+def directions
+  puts `clear`
+  puts "Here you will find the directions to play Cat and Mouse"
+  puts "The goal of this game is to catch your opponets 'home'"
+end 
+
 ################# Validation methods #############
 
 def valid(choice)
